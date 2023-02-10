@@ -1,0 +1,160 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Square+Peg&family=Zen+Dots&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(6, 6, 6);
+  color: white;
+  font-family: var(--ff-primary);
+}
+
+:root {
+  --ff-primary: 'Zen Dots', cursive;
+  --ff-secondary: 'Square Peg', cursive;
+  --ff-tertiary: 'Babylonica', cursive;
+}
+
+.userName__element {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.gameTitle {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.underTitle {
+  text-align: center;
+  font-family: var(--ff-secondary);
+  font-size: 2rem;
+}
+
+.secretNumber {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.number {
+  display: inline-block;
+  border: 2px solid white;
+  padding: 2rem 4.5rem;
+  font-size: 4rem;
+  font-family: var(--ff-primary);
+}
+
+.changeColor {
+  animation: color 3s infinite linear;
+}
+
+@keyframes color {
+  0% {
+    color: #d1b604;
+    transform: rotate(0deg);
+  }
+
+  30% {
+    color: forestgreen;
+  }
+
+  50% {
+    color: blue;
+  }
+
+  70% {
+    color: yellow;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* right */
+.rightInfo {
+  margin: 1.6rem 1.4rem 0 0;
+  padding: 2rem;
+  display: grid;
+  justify-content: right;
+  gap: 10px;
+}
+
+.input {
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+}
+
+.input-number {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 3rem;
+  padding: 2.5rem;
+  width: 170px;
+  height: 70px;
+  font-family: var(--ff-secondary);
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  font-size: 1.9rem;
+}
+
+.leftside {
+  text-align: center;
+  max-width: 20ch;
+  position: absolute;
+  top: 61%;
+  left: 4%;
+  line-height: 30px;
+}
+
+.newGame {
+  margin-bottom: 1rem;
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 1.3rem;
+  font-family: inherit;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.newGame:active {
+  font-size: 1.24rem;
+  background-color: #ccc;
+}
+
+/* left */
+.info {
+  position: absolute;
+  right: 8%;
+  top: 65%;
+  padding: 25px;
+  font-size: 1.3rem;
+  font-family: var(--ff-primary);
+  line-height: 2.3rem;
+  letter-spacing: 1px;
+}
+
+.info span {
+  margin-left: 1rem;
+}
