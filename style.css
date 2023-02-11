@@ -41,6 +41,10 @@ body {
   text-align: center;
 }
 
+.hidden {
+  padding: 1rem;
+}
+
 .number {
   display: inline-block;
   border: 2px solid white;

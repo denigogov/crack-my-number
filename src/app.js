@@ -3,8 +3,10 @@
 const userName = document.querySelector('.userName__element');
 const number = document.querySelector('.number');
 const btnForm = document.querySelector('.input');
+const crackBtn = document.querySelector('.btn');
 const message = document.querySelector('.try');
 const inputNumber = document.querySelector('.input-number');
+const scoreMsg = document.querySelector('.hidden');
 const randomMessage = document.querySelector('.message');
 
 const bestScoreInput = document.querySelector('.bestScore');
@@ -52,6 +54,8 @@ btnForm.addEventListener('submit', function (e) {
       sound('success-fanfare-trumpets-6185.mp3');
       text(message, `finally ${nameUser} you crack my number Amazing`);
       text(number, randomNumber);
+      credit++;
+      creditInput.textContent = credit;
 
       // add best score
       if (trys > bestScore) {
@@ -81,11 +85,7 @@ btnForm.addEventListener('submit', function (e) {
           message,
           `${nameUser} the number was ${randomNumber} , please try again`
         );
-        document.querySelector('body').style.color = '#a60303';
-
-        // add Negative credit 1
-        test--;
-        point(credit--, creditInput);
+        document.querySelector('body').style.color = '#bf1f1f';
       }
 
       point(trys--, tryInput);
@@ -95,6 +95,10 @@ btnForm.addEventListener('submit', function (e) {
 
 // RESTART THE GAME
 restartbtn.addEventListener('click', function () {
+  if (trys < 10) {
+    point(credit--, creditInput);
+  }
+
   randomNumber = Math.floor(Math.random() * 20) + 1;
   trys = 10;
   game = true;
@@ -105,4 +109,23 @@ restartbtn.addEventListener('click', function () {
   text(number, '?');
   text(tryInput, trys);
   text(message, 'try ...');
+
+  if (credit < 1) {
+    sound('piano-crash-sound-37898.mp3');
+    text(number, 'GAME OVER');
+    text(scoreMsg, `your best score is: ${bestScore} point`);
+    text(crackBtn, 'restart');
+    document.querySelector('body').style.color = '#bf1f1f';
+    inputNumber.style.display = 'none';
+
+    // hidding the classes
+    document.querySelector('.rightInfo').style.display = 'none';
+    document.querySelector('.leftside').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+
+    // restart btn
+    crackBtn.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
 });

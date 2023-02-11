@@ -44,9 +44,9 @@ they're going and hook up with ’em later."`,
     ],
   ];
 
-  const matematika = Math.floor(Math.random() * words.length);
+  const numbRandom = Math.floor(Math.random() * words.length);
 
-  const random = words[matematika];
+  const random = words[numbRandom];
 
   return random;
 };
